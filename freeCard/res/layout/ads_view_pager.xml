@@ -8,13 +8,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         ></android.support.v4.view.ViewPager>
-	<com.wxz.freecard.view.UnderlinePageIndicator
+	<com.wxz.freecard.view.viewpagerindicator.CirclePageIndicator
         android:id="@+id/indicator"
-        android:layout_height="2dp"
-        android:layout_width="fill_parent"
-        android:background="#FFCCCCCC"
-        app:selectedColor="#FFCC0000"
-        app:fadeDelay="1000"
-        app:fadeLength="1000"
-        />
+        android:padding="10dip"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"/>
 </RelativeLayout>

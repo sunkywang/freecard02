@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
+import android.widget.ImageView.ScaleType;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.wxz.freecard.bean.SellerInfo;
@@ -43,6 +44,7 @@ public class PicPagerAdapter extends PagerAdapter
     {
         ImageView image = new ImageView(container.getContext());
         image.setLayoutParams(new LayoutParams(-1, -1));
+        image.setScaleType(ScaleType.FIT_XY);
         container.addView(image);
         ImageLoader.getInstance().displayImage(list.get(position % list.size()).pic_url, image);
         return image;
