@@ -36,6 +36,12 @@
             android:screenOrientation="portrait" >
             
         </activity>
+        <activity
+            android:name="com.wxz.freecard.activity.CityActivity"
+            android:theme="@android:style/Theme.Holo.NoActionBar"
+            android:screenOrientation="portrait" >
+            
+        </activity>
     </application>
 
 </manifest>

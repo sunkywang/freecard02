@@ -30,7 +30,7 @@ public class PicPagerAdapter extends PagerAdapter
     @Override
     public int getCount()
     {
-        return list == null ? 0 : Integer.MAX_VALUE;
+        return list == null ? 0 : list.size();
     }
 
     @Override
@@ -46,7 +46,7 @@ public class PicPagerAdapter extends PagerAdapter
         image.setLayoutParams(new LayoutParams(-1, -1));
         image.setScaleType(ScaleType.FIT_XY);
         container.addView(image);
-        ImageLoader.getInstance().displayImage(list.get(position % list.size()).pic_url, image);
+        ImageLoader.getInstance().displayImage(list.get(position).pic_url, image);
         return image;
     }
     

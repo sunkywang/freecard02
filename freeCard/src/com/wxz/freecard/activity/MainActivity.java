@@ -1,7 +1,9 @@
 package com.wxz.freecard.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.view.View;
@@ -60,6 +62,8 @@ public class MainActivity extends BaseActivity
         {
             case R.id.tv_city:
                 LogUtils.i("city_click");
+                Intent intent = new Intent(this, CityActivity.class);
+                startActivity(intent);
                 break;
             case R.id.search_input:
                 LogUtils.i("search_click");
@@ -77,6 +81,9 @@ public class MainActivity extends BaseActivity
         {
             case R.id.main_tab:
                 ft.show(mainFragment);
+                safeHideFragment(ft, cardBagFragment);
+                safeHideFragment(ft, discoveryFragment);
+                safeHideFragment(ft, mineFragment);
                 break;
             case R.id.cardbag_tab:
                 if (cardBagFragment == null)
@@ -87,6 +94,9 @@ public class MainActivity extends BaseActivity
                 else
                 {
                     ft.show(cardBagFragment);
+                    safeHideFragment(ft, mainFragment);
+                    safeHideFragment(ft, discoveryFragment);
+                    safeHideFragment(ft, mineFragment);
                 }
                 break;
             case R.id.discovery_tab:
@@ -98,6 +108,9 @@ public class MainActivity extends BaseActivity
                 else
                 {
                     ft.show(discoveryFragment);
+                    safeHideFragment(ft, cardBagFragment);
+                    safeHideFragment(ft, mainFragment);
+                    safeHideFragment(ft, mineFragment);
                 }
                 break;
             case R.id.mine_tab:
@@ -113,6 +126,14 @@ public class MainActivity extends BaseActivity
                 break;
         }
         ft.commitAllowingStateLoss();
+    }
+    
+    private void safeHideFragment(FragmentTransaction ft, Fragment fragment)
+    {
+        if (fragment != null && fragment.isVisible())
+        {
+            ft.hide(fragment);
+        }
     }
     
     boolean exitFlag;

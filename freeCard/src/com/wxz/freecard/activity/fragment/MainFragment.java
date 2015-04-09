@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,8 +19,8 @@ import com.wxz.freecard.R;
 import com.wxz.freecard.adapter.MainFragmentListAdapter;
 import com.wxz.freecard.adapter.PicPagerAdapter;
 import com.wxz.freecard.bean.SellerInfo;
+import com.wxz.freecard.utils.AdsPlayer;
 import com.wxz.freecard.view.viewpagerindicator.CirclePageIndicator;
-import com.wxz.freecard.view.viewpagerindicator.UnderlinePageIndicator;
 
 public class MainFragment extends BaseFragment
 {
@@ -36,6 +37,8 @@ public class MainFragment extends BaseFragment
     
     private MainFragmentListAdapter listAdapter;
     
+    private AdsPlayer adsPlayer;
+    
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -44,14 +47,43 @@ public class MainFragment extends BaseFragment
         ViewUtils.inject(this, view);
         headerView = inflater.inflate(R.layout.ads_view_pager, list,false);
         ViewUtils.inject(this, headerView);
-        setupViews();
         return view;
+    }
+    
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState)
+    {
+        super.onActivityCreated(savedInstanceState);
+        setupViews();
+        adsPlayer = new AdsPlayer(adsPager, new Handler());
+        adsPlayer.play();
+    }
+    
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        adsPlayer.resume();
+    }
+    
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        adsPlayer.pause();
+    }
+    
+    @Override
+    public void onDestroy()
+    {
+        super.onDestroy();
+        adsPlayer.release();
     }
     
     private void setupViews()
     {
-    	pagerAdapter = new PicPagerAdapter(getSellerInfos());
-    	adsPager.setAdapter(pagerAdapter);
+        pagerAdapter = new PicPagerAdapter(getSellerInfos());
+        adsPager.setAdapter(pagerAdapter);
     	indicator.setViewPager(adsPager);
         list.addHeaderView(headerView);
         listAdapter = new MainFragmentListAdapter(getActivity(), getSellerInfos());
