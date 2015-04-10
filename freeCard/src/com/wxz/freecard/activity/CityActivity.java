@@ -9,13 +9,14 @@ import java.util.List;
 import java.util.Locale;
 import java.util.regex.Pattern;
 
-import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,17 +26,26 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.baidu.location.LocationClient;
+import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.util.LogUtils;
+import com.lidroid.xutils.view.annotation.ViewInject;
+import com.lidroid.xutils.view.annotation.event.OnClick;
+import com.wxz.freecard.CardApplication.OnLocationReceivedListener;
 import com.wxz.freecard.R;
 import com.wxz.freecard.bean.City;
 import com.wxz.freecard.database.DBHelper;
 import com.wxz.freecard.view.LetterListView;
 import com.wxz.freecard.view.LetterListView.OnTouchingLetterChangedListener;
 
-public class CityActivity extends Activity {
-	private BaseAdapter adapter;
+public class CityActivity extends BaseActivity {
+    @ViewInject(R.id.iv_close)
+    private ImageView ivClose;
+	private ListAdapter adapter;
 	private ListView personList;
 	private TextView overlay; // 对话框首字母textview
 	private LetterListView letterListView; // A-Z listview
@@ -47,11 +57,14 @@ public class CityActivity extends Activity {
 	private ArrayList<City> city_lists;// 城市列表
 	ListAdapter.TopViewHolder topViewHolder;
 	private String lngCityName = "正在定位所在位置..";
+	private LocationClient locationClient;
+	private TextView tvLocation;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.city_activity);
+		ViewUtils.inject(this);
 		personList = (ListView) findViewById(R.id.list_view);
 		allCity_lists = new ArrayList<City>();
 		letterListView = (LetterListView) findViewById(R.id.MyLetterListView01);
@@ -64,54 +77,111 @@ public class CityActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
+			    String city = adapter.getItem(arg2).name;
+			    if (!TextUtils.isEmpty(city))
+			    {
+			        getMyApplication().getLocationInfo().setCity = city;
+			        getMyApplication().getLocationInfo().saveToPrefrence();
+			        Intent data = new Intent();
+			        data.putExtra("city", city);
+			        setResult(RESULT_OK, data);
+			        finish();
+			    }
+			    else if (adapter.getItemViewType(arg2) == 1 && !lngCityName.equals("正在定位所在位置.."))
+			    {
+			        getMyApplication().getLocationInfo().setCity = lngCityName;
+                    getMyApplication().getLocationInfo().saveToPrefrence();
+                    Intent data = new Intent();
+                    data.putExtra("city", lngCityName);
+                    setResult(RESULT_OK, data);
+                    finish();
+			    }
 			}
 		});
 		personList.setAdapter(adapter);
 		initOverlay();
 		hotCityInit();
 		setAdapter(allCity_lists);
+		initLocationListener();
 	}
 
+	private void initLocationListener()
+	{
+	    locationClient = getMyApplication().mLocationClient;
+	    getMyApplication().addLocationReceivedListener(listener);
+	    locationClient.start();
+	    locationClient.requestLocation();
+	}
+	
+	private OnLocationReceivedListener listener = new OnLocationReceivedListener()
+    {
+        
+        @Override
+        public void onReceived()
+        {
+            new Handler().postDelayed(new Runnable()
+            {
+                
+                @Override
+                public void run()
+                {
+                    lngCityName = getMyApplication().getLocationInfo().city;
+                    LogUtils.e("lngCityName:"+lngCityName);
+                    adapter.notifyDataSetChanged();
+                }
+            },1000);
+        }
+    };
+	
+    @OnClick(R.id.iv_close)
+    private void Onclick(View v)
+    {
+        finish();
+    }
+    
 	@Override
 	protected void onDestroy()
 	{
 	    super.onDestroy();
 	    removeOverlay();
+	    locationClient.stop();
+	    locationClient = null;
+	    getMyApplication().removeLocationReceivedListener(listener);
 	}
 	
 	/**
 	 * 热门城市
 	 */
 	public void hotCityInit() {
-		City city = new City("", "-");   
-		allCity_lists.add(city);
-		city = new City("", "-");
-		allCity_lists.add(city);
-		city = new City("上海", "");
-		allCity_lists.add(city);
-		city = new City("北京", "");
-		allCity_lists.add(city);
-		city = new City("广州", "");
-		allCity_lists.add(city);
-		city = new City("深圳", "");
-		allCity_lists.add(city);
-		city = new City("武汉", "");
-		allCity_lists.add(city);
-		city = new City("天津", "");
-		allCity_lists.add(city);
-		city = new City("西安", "");
-		allCity_lists.add(city);
-		city = new City("南京", "");
-		allCity_lists.add(city);
-		city = new City("杭州", "");
-		allCity_lists.add(city);
-		city = new City("成都", "");
-		allCity_lists.add(city);
-		city = new City("重庆", "");
-		allCity_lists.add(city);
-		city_lists = getCityList();
-		allCity_lists.addAll(city_lists);
-	}
+        City city = new City("","-");   
+        allCity_lists.add(city);
+//      city = new City("", "-");
+//      allCity_lists.add(city);
+        city = new City("上海", "");
+        allCity_lists.add(city);
+        city = new City("北京", "");
+        allCity_lists.add(city);
+        city = new City("广州", "");
+        allCity_lists.add(city);
+        city = new City("深圳", "");
+        allCity_lists.add(city);
+        city = new City("武汉", "");
+        allCity_lists.add(city);
+        city = new City("天津", "");
+        allCity_lists.add(city);
+        city = new City("西安", "");
+        allCity_lists.add(city);
+        city = new City("南京", "");
+        allCity_lists.add(city);
+        city = new City("杭州", "");
+        allCity_lists.add(city);
+        city = new City("成都", "");
+        allCity_lists.add(city);
+        city = new City("重庆", "");
+        allCity_lists.add(city);
+        city_lists = getCityList();
+        allCity_lists.addAll(city_lists);
+    }
 
 	@SuppressWarnings("unchecked")
     private ArrayList<City> getCityList() {
@@ -189,7 +259,7 @@ public class CityActivity extends Activity {
 		}
 
 		@Override
-		public Object getItem(int position) {
+		public City getItem(int position) {
 			return list.get(position);
 		}
 
@@ -202,10 +272,14 @@ public class CityActivity extends Activity {
 		public int getItemViewType(int position) {
 			// TODO Auto-generated method stub
 			int type = 0;
-			if (position == 0) {
-				type = 2;
-			} else if (position == 1) {
-				type = 1;
+//			if (position == 0) {
+//				type = 2;
+//			} else if (position == 1) {
+//				type = 1;
+//			}
+			if (position == 0)
+			{
+			    type = 1;
 			}
 			return type;
 		}
@@ -223,7 +297,7 @@ public class CityActivity extends Activity {
 				if (convertView == null) {
 					topViewHolder = new TopViewHolder();
 					convertView = inflater.inflate(R.layout.first_list_item,
-							parent,false);
+							null);
 					topViewHolder.alpha = (TextView) convertView
 							.findViewById(R.id.alpha);
 					topViewHolder.name = (TextView) convertView
@@ -241,7 +315,7 @@ public class CityActivity extends Activity {
 				final ShViewHolder shViewHolder;
 				if (convertView == null) {
 					shViewHolder = new ShViewHolder();
-					convertView = inflater.inflate(R.layout.search_item, parent,false);
+					convertView = inflater.inflate(R.layout.search_item,null);
 					shViewHolder.editText = (EditText) convertView
 							.findViewById(R.id.sh);
 					convertView.setTag(shViewHolder);
@@ -250,7 +324,7 @@ public class CityActivity extends Activity {
 				}
 			} else {
 				if (convertView == null) {
-					convertView = inflater.inflate(R.layout.list_item, parent,false);
+					convertView = inflater.inflate(R.layout.list_item, null);
 					holder = new ViewHolder();
 					holder.alpha = (TextView) convertView
 							.findViewById(R.id.alpha);

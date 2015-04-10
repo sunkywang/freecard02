@@ -10,11 +10,16 @@ import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
+import com.baidu.location.LocationClientOption.LocationMode;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.util.LogUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
 import com.lidroid.xutils.view.annotation.event.OnRadioGroupCheckedChange;
+import com.wxz.freecard.CardApplication;
+import com.wxz.freecard.CardApplication.OnLocationReceivedListener;
 import com.wxz.freecard.R;
 import com.wxz.freecard.activity.fragment.CardBagFragment;
 import com.wxz.freecard.activity.fragment.DiscoveryFragment;
@@ -38,6 +43,8 @@ public class MainActivity extends BaseActivity
     private DiscoveryFragment discoveryFragment;
     private MineFragment mineFragment;
     
+    private LocationClient mLocationClient;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -45,6 +52,16 @@ public class MainActivity extends BaseActivity
         setContentView(R.layout.main);
         ViewUtils.inject(this);
         addMainFragment();
+        initLocationOptions();
+        setupViews();
+    }
+    
+    private void setupViews()
+    {
+        if (getMyApplication().getLocationInfo().setCity.equals(""))
+            tvLocation.setText(getMyApplication().getLocationInfo().city);
+        else
+            tvLocation.setText(getMyApplication().getLocationInfo().setCity);
     }
     
     private void addMainFragment()
@@ -55,6 +72,74 @@ public class MainActivity extends BaseActivity
         ft.commitAllowingStateLoss();
     }
     
+    private void initLocationOptions()
+    {
+        mLocationClient = getMyApplication().mLocationClient;
+        getMyApplication().addLocationReceivedListener(listener);
+        mLocationClient.start();
+    }
+    
+    private OnLocationReceivedListener listener = new OnLocationReceivedListener()
+    {
+        
+        @Override
+        public void onReceived()
+        {
+            new Handler().post(new Runnable()
+            {
+                
+                @Override
+                public void run()
+                {
+                    LogUtils.e("city:"+getMyApplication().getLocationInfo().city);
+                    if (getMyApplication().getLocationInfo().setCity.equals(""))
+                        tvLocation.setText(getMyApplication().getLocationInfo().city);
+                }
+            });
+        }
+    };
+    
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+        mLocationClient.requestLocation();
+    }
+    
+    @Override
+    protected void onStop()
+    {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
+        mLocationClient.stop();
+        mLocationClient = null;
+        getMyApplication().removeLocationReceivedListener(listener);
+    }
+    
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode)
+        {
+            case 0:
+                if (resultCode == RESULT_OK)
+                {
+                    String city = data.getStringExtra("city");
+                    tvLocation.setText(city);
+                }
+                break;
+            
+            default:
+                break;
+        }
+    }
+    
     @OnClick({R.id.tv_city,R.id.search_input,R.id.tv_msg_count})
     public void onClick(View v)
     {
@@ -63,7 +148,7 @@ public class MainActivity extends BaseActivity
             case R.id.tv_city:
                 LogUtils.i("city_click");
                 Intent intent = new Intent(this, CityActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent,0);
                 break;
             case R.id.search_input:
                 LogUtils.i("search_click");
@@ -164,12 +249,6 @@ public class MainActivity extends BaseActivity
             }
         }
         return super.onKeyDown(keyCode, event);
-    }
-    
-    @Override
-    protected void onDestroy()
-    {
-        super.onDestroy();
     }
     
 }

@@ -5,10 +5,16 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
 import com.lidroid.xutils.util.LogUtils;
+import com.wxz.freecard.CardApplication;
 
 public class BaseActivity extends FragmentActivity
 {
 
+    public CardApplication getMyApplication()
+    {
+        return (CardApplication)getApplication();
+    }
+    
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
