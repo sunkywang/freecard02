@@ -13,10 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="6dp"
-        android:layout_marginStart="6dp"
         android:orientation="vertical"
         android:layout_toRightOf="@+id/iv_seller_pic"
-        android:layout_toEndOf="@+id/iv_seller_pic"
         >
         <TextView 
             android:id="@+id/tv_seller_name"
