@@ -54,15 +54,17 @@
             android:theme="@android:style/Theme.Holo.NoActionBar"
             android:label="@string/app_name"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait" />
             
-        </activity>
         <activity
             android:name="com.wxz.freecard.activity.CityActivity"
             android:theme="@android:style/Theme.Holo.NoActionBar"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wxz.freecard.activity.MsgCenterActivity"
+            android:theme="@android:style/Theme.Holo.NoActionBar"
+            android:screenOrientation="portrait" />
             
-        </activity>
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"

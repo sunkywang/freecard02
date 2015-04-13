@@ -23,19 +23,10 @@ import com.wxz.freecard.bean.SellerInfo;
 public class MainFragmentListAdapter extends BasicListAdapter<SellerInfo>
 {
 
-    private DisplayImageOptions options;
 
     public MainFragmentListAdapter(Context context, List<SellerInfo> list)
     {
         super(context, list);
-        options = new DisplayImageOptions.Builder()
-//        .showImageOnLoading(R.drawable.ic_stub)
-//        .showImageForEmptyUri(R.drawable.ic_empty)
-//        .showImageOnFail(R.drawable.ic_error)
-        .cacheInMemory(true)
-        .cacheOnDisk(true)
-//        .bitmapConfig(Bitmap.Config.RGB_565)
-        .build();
     }
 
     @Override

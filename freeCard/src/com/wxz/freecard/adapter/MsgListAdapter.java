@@ -23,20 +23,9 @@ import com.wxz.freecard.bean.SellerInfo;
  */
 public class MsgListAdapter extends BasicListAdapter<MessageInfo>
 {
-
-    private DisplayImageOptions options;
-
     public MsgListAdapter(Context context, List<MessageInfo> list)
     {
         super(context, list);
-        options = new DisplayImageOptions.Builder()
-//        .showImageOnLoading(R.drawable.ic_stub)
-//        .showImageForEmptyUri(R.drawable.ic_empty)
-//        .showImageOnFail(R.drawable.ic_error)
-        .cacheInMemory(true)
-        .cacheOnDisk(true)
-//        .bitmapConfig(Bitmap.Config.RGB_565)
-        .build();
     }
 
     @Override
@@ -46,7 +35,7 @@ public class MsgListAdapter extends BasicListAdapter<MessageInfo>
         ViewHolder holder = null;
         if (convertView == null)
         {
-            convertView = LayoutInflater.from(context).inflate(R.layout.seller_item, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.msg_item, parent, false);
             holder = new ViewHolder();
             ViewUtils.inject(holder, convertView);
             convertView.setTag(holder);
@@ -55,21 +44,38 @@ public class MsgListAdapter extends BasicListAdapter<MessageInfo>
         {
             holder = (ViewHolder)convertView.getTag();
         }
+        boolean isRead = info.isRead;
+        holder.msgTitle.setEnabled(!isRead);
+        holder.msgContent.setEnabled(!isRead);
+        holder.msgDate.setEnabled(!isRead);
+        if (!isRead)
+        {
+            holder.msgTitle.setTextColor(context.getResources().getColor(R.color.black));
+            holder.msgContent.setTextColor(context.getResources().getColor(R.color.black));
+            holder.msgDate.setTextColor(context.getResources().getColor(R.color.black));
+        }
+        else
+        {
+            holder.msgTitle.setTextColor(context.getResources().getColor(R.color.gray));
+            holder.msgContent.setTextColor(context.getResources().getColor(R.color.gray));
+            holder.msgDate.setTextColor(context.getResources().getColor(R.color.gray));
+        }
         holder.msgTitle.setText(info.title);
         holder.msgContent.setText(info.content);
+        holder.msgDate.setText(info.msg_date);
         ImageLoader.getInstance().displayImage(info.msg_pic, holder.msgPic, options);
         return convertView;
     }
     
     static class ViewHolder
     {
-        @ViewInject(R.id.iv_seller_pic)
+        @ViewInject(R.id.iv_msg_pic)
         ImageView msgPic;
-        @ViewInject(R.id.tv_seller_name)
+        @ViewInject(R.id.tv_msg_title)
         TextView msgTitle;
-        @ViewInject(R.id.tv_seller_detail)
+        @ViewInject(R.id.tv_msg_detail)
         TextView msgContent;
-        @ViewInject(R.id.tv_seller_detail)
+        @ViewInject(R.id.tv_msg_time)
         TextView msgDate;
     }
     

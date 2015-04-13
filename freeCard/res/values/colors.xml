@@ -3,4 +3,6 @@
     <color name="title_color">#ff000044</color>
     <color name="tab_bg_color">#ffdddddd</color>
     <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="gray">#ffcccccc</color>
 </resources>

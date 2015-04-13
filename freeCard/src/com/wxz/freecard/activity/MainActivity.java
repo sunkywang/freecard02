@@ -33,6 +33,8 @@ public class MainActivity extends BaseActivity
     private TextView tvLocation;
     @ViewInject(R.id.search_input)
     private TextView tvSearch;
+    @ViewInject(R.id.tv_msg)
+    private TextView tvMsg;
     @ViewInject(R.id.tv_msg_count)
     private TextView tvMsgCount;
     @ViewInject(R.id.tab_bottom)
@@ -140,21 +142,25 @@ public class MainActivity extends BaseActivity
         }
     }
     
-    @OnClick({R.id.tv_city,R.id.search_input,R.id.tv_msg_count})
+    @OnClick({R.id.tv_city,R.id.search_input,R.id.tv_msg_count,R.id.tv_msg})
     public void onClick(View v)
     {
+        Intent intent;
         switch(v.getId())
         {
             case R.id.tv_city:
                 LogUtils.i("city_click");
-                Intent intent = new Intent(this, CityActivity.class);
+                intent = new Intent(this, CityActivity.class);
                 startActivityForResult(intent,0);
                 break;
             case R.id.search_input:
                 LogUtils.i("search_click");
                 break;
             case R.id.tv_msg_count:
+            case R.id.tv_msg:
                 LogUtils.i("msg_click");
+                intent = new Intent(this, MsgCenterActivity.class);
+                startActivityForResult(intent,1);
                 break;
         }
     }
