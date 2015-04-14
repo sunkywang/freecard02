@@ -29,14 +29,7 @@ import com.wxz.freecard.utils.ToastUtil;
 
 public class MainActivity extends BaseActivity
 {
-    @ViewInject(R.id.tv_city)
-    private TextView tvLocation;
-    @ViewInject(R.id.search_input)
-    private TextView tvSearch;
-    @ViewInject(R.id.tv_msg)
-    private TextView tvMsg;
-    @ViewInject(R.id.tv_msg_count)
-    private TextView tvMsgCount;
+    
     @ViewInject(R.id.tab_bottom)
     private RadioGroup tabGroup;
     
@@ -45,7 +38,6 @@ public class MainActivity extends BaseActivity
     private DiscoveryFragment discoveryFragment;
     private MineFragment mineFragment;
     
-    private LocationClient mLocationClient;
     
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -54,16 +46,6 @@ public class MainActivity extends BaseActivity
         setContentView(R.layout.main);
         ViewUtils.inject(this);
         addMainFragment();
-        initLocationOptions();
-        setupViews();
-    }
-    
-    private void setupViews()
-    {
-        if (getMyApplication().getLocationInfo().setCity.equals(""))
-            tvLocation.setText(getMyApplication().getLocationInfo().city);
-        else
-            tvLocation.setText(getMyApplication().getLocationInfo().setCity);
     }
     
     private void addMainFragment()
@@ -72,40 +54,6 @@ public class MainActivity extends BaseActivity
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.add(R.id.container, mainFragment,MainFragment.class.getSimpleName());
         ft.commitAllowingStateLoss();
-    }
-    
-    private void initLocationOptions()
-    {
-        mLocationClient = getMyApplication().mLocationClient;
-        getMyApplication().addLocationReceivedListener(listener);
-        mLocationClient.start();
-    }
-    
-    private OnLocationReceivedListener listener = new OnLocationReceivedListener()
-    {
-        
-        @Override
-        public void onReceived()
-        {
-            new Handler().post(new Runnable()
-            {
-                
-                @Override
-                public void run()
-                {
-                    LogUtils.e("city:"+getMyApplication().getLocationInfo().city);
-                    if (getMyApplication().getLocationInfo().setCity.equals(""))
-                        tvLocation.setText(getMyApplication().getLocationInfo().city);
-                }
-            });
-        }
-    };
-    
-    @Override
-    protected void onStart()
-    {
-        super.onStart();
-        mLocationClient.requestLocation();
     }
     
     @Override
@@ -118,52 +66,15 @@ public class MainActivity extends BaseActivity
     protected void onDestroy()
     {
         super.onDestroy();
-        mLocationClient.stop();
-        mLocationClient = null;
-        getMyApplication().removeLocationReceivedListener(listener);
     }
     
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
         super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode)
-        {
-            case 0:
-                if (resultCode == RESULT_OK)
-                {
-                    String city = data.getStringExtra("city");
-                    tvLocation.setText(city);
-                }
-                break;
-            
-            default:
-                break;
-        }
+        
     }
     
-    @OnClick({R.id.tv_city,R.id.search_input,R.id.tv_msg_count,R.id.tv_msg})
-    public void onClick(View v)
-    {
-        Intent intent;
-        switch(v.getId())
-        {
-            case R.id.tv_city:
-                LogUtils.i("city_click");
-                intent = new Intent(this, CityActivity.class);
-                startActivityForResult(intent,0);
-                break;
-            case R.id.search_input:
-                LogUtils.i("search_click");
-                break;
-            case R.id.tv_msg_count:
-            case R.id.tv_msg:
-                LogUtils.i("msg_click");
-                intent = new Intent(this, MsgCenterActivity.class);
-                startActivityForResult(intent,1);
-                break;
-        }
-    }
     @OnRadioGroupCheckedChange(R.id.tab_bottom)
     public void onCheckedChanged(RadioGroup group, int checkedId)
     {
@@ -185,10 +96,10 @@ public class MainActivity extends BaseActivity
                 else
                 {
                     ft.show(cardBagFragment);
-                    safeHideFragment(ft, mainFragment);
-                    safeHideFragment(ft, discoveryFragment);
-                    safeHideFragment(ft, mineFragment);
                 }
+                safeHideFragment(ft, mainFragment);
+                safeHideFragment(ft, discoveryFragment);
+                safeHideFragment(ft, mineFragment);
                 break;
             case R.id.discovery_tab:
                 if (discoveryFragment == null)
@@ -199,10 +110,10 @@ public class MainActivity extends BaseActivity
                 else
                 {
                     ft.show(discoveryFragment);
-                    safeHideFragment(ft, cardBagFragment);
-                    safeHideFragment(ft, mainFragment);
-                    safeHideFragment(ft, mineFragment);
                 }
+                safeHideFragment(ft, cardBagFragment);
+                safeHideFragment(ft, mainFragment);
+                safeHideFragment(ft, mineFragment);
                 break;
             case R.id.mine_tab:
                 if (mineFragment == null)
@@ -214,6 +125,10 @@ public class MainActivity extends BaseActivity
                 {
                     ft.show(mineFragment);
                 }
+                safeHideFragment(ft, cardBagFragment);
+                safeHideFragment(ft, mainFragment);
+                safeHideFragment(ft, discoveryFragment);
+
                 break;
         }
         ft.commitAllowingStateLoss();

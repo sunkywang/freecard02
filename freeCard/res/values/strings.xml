@@ -12,4 +12,21 @@
     <string name="user_msg">用户消息</string>
     <string name="system_msg">系统消息</string>
     <string name="seller_msg">商家消息</string>
+    <string name="report">举报</string>
+    <string name="coupon">优惠券</string>
+    <string name="total">全部</string>
+    <string name="often">常用</string>
+    <string name="collection">收藏</string>
+    <string name="unused">未使用</string>
+    <string name="used">已使用</string>
+    <string name="out_dated">已过期</string>
+    <string name="entertainment">休闲娱乐</string>
+    <string name="beautiful_lady">丽人养成</string>
+    <string name="life_service">生活服务</string>
+    <string name="health">健身养生</string>
+    <string name="car_service">汽车服务</string>
+    <string name="food">美食诱惑</string>
+    <string name="baby_care">母婴亲子</string>
+    <string name="more">更多</string>
+    
 </resources>

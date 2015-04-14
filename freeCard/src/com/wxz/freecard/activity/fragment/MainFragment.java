@@ -3,6 +3,8 @@ package com.wxz.freecard.activity.fragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
@@ -10,12 +12,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import com.baidu.location.LocationClient;
 import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.util.LogUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
+import com.lidroid.xutils.view.annotation.event.OnClick;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.PauseOnScrollListener;
 import com.wxz.freecard.R;
+import com.wxz.freecard.CardApplication.OnLocationReceivedListener;
+import com.wxz.freecard.activity.CityActivity;
+import com.wxz.freecard.activity.MsgCenterActivity;
 import com.wxz.freecard.adapter.MainFragmentListAdapter;
 import com.wxz.freecard.adapter.PicPagerAdapter;
 import com.wxz.freecard.bean.SellerInfo;
@@ -24,6 +33,14 @@ import com.wxz.freecard.view.viewpagerindicator.CirclePageIndicator;
 
 public class MainFragment extends BaseFragment
 {
+    @ViewInject(R.id.tv_city)
+    private TextView tvLocation;
+    @ViewInject(R.id.search_input)
+    private TextView tvSearch;
+    @ViewInject(R.id.tv_msg)
+    private TextView tvMsg;
+    @ViewInject(R.id.tv_msg_count)
+    private TextView tvMsgCount;
     @ViewInject(R.id.list)
     private ListView list;
     @ViewInject(R.id.vp_ads)
@@ -38,7 +55,8 @@ public class MainFragment extends BaseFragment
     private MainFragmentListAdapter listAdapter;
     
     private AdsPlayer adsPlayer;
-    
+
+    private LocationClient mLocationClient;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -49,14 +67,90 @@ public class MainFragment extends BaseFragment
         ViewUtils.inject(this, headerView);
         return view;
     }
+    private void initLocationOptions()
+    {
+        mLocationClient = getMyApplication().mLocationClient;
+        getMyApplication().addLocationReceivedListener(listener);
+        mLocationClient.start();
+    }
+    
+    private OnLocationReceivedListener listener = new OnLocationReceivedListener()
+    {
+        
+        @Override
+        public void onReceived()
+        {
+            new Handler().post(new Runnable()
+            {
+                
+                @Override
+                public void run()
+                {
+                    LogUtils.e("city:"+getMyApplication().getLocationInfo().city);
+                    if (getMyApplication().getLocationInfo().setCity.equals(""))
+                        tvLocation.setText(getMyApplication().getLocationInfo().city);
+                }
+            });
+        }
+    };
+    
+    @OnClick({R.id.tv_city,R.id.search_input,R.id.tv_msg_count,R.id.tv_msg})
+    public void onClick(View v)
+    {
+        Intent intent;
+        switch(v.getId())
+        {
+            case R.id.tv_city:
+                LogUtils.i("city_click");
+                intent = new Intent(getActivity(), CityActivity.class);
+                startActivityForResult(intent,0);
+                break;
+            case R.id.search_input:
+                LogUtils.i("search_click");
+                break;
+            case R.id.tv_msg_count:
+            case R.id.tv_msg:
+                LogUtils.i("msg_click");
+                intent = new Intent(getActivity(), MsgCenterActivity.class);
+                startActivityForResult(intent,1);
+                break;
+        }
+    }
     
     @Override
     public void onActivityCreated(Bundle savedInstanceState)
     {
         super.onActivityCreated(savedInstanceState);
+        initLocationOptions();
         setupViews();
         adsPlayer = new AdsPlayer(adsPager, new Handler());
         adsPlayer.play();
+    }
+    
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode)
+        {
+            case 0:
+                if (resultCode == Activity.RESULT_OK)
+                {
+                    String city = data.getStringExtra("city");
+                    tvLocation.setText(city);
+                }
+                break;
+            
+            default:
+                break;
+        }
+    }
+    
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+        mLocationClient.requestLocation();
     }
     
     @Override
@@ -78,10 +172,18 @@ public class MainFragment extends BaseFragment
     {
         super.onDestroy();
         adsPlayer.release();
+        mLocationClient.stop();
+        mLocationClient = null;
+        getMyApplication().removeLocationReceivedListener(listener);
     }
     
     private void setupViews()
     {
+        if (getMyApplication().getLocationInfo().setCity.equals(""))
+            tvLocation.setText(getMyApplication().getLocationInfo().city);
+        else
+            tvLocation.setText(getMyApplication().getLocationInfo().setCity);
+        
         pagerAdapter = new PicPagerAdapter(getSellerInfos());
         adsPager.setAdapter(pagerAdapter);
     	indicator.setViewPager(adsPager);

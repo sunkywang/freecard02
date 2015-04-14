@@ -3,8 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" 
     android:background="@color/white">
+    <include layout="@layout/main_title"/>
     <ListView 
         android:id="@+id/list"
+        android:layout_below="@+id/layout_title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:divider="#00000000"

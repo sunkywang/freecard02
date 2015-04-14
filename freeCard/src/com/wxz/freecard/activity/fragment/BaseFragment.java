@@ -1,6 +1,7 @@
 package com.wxz.freecard.activity.fragment;
 
 import com.lidroid.xutils.util.LogUtils;
+import com.wxz.freecard.CardApplication;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,6 +14,11 @@ import android.view.ViewGroup;
 public class BaseFragment extends Fragment
 {
 
+    public CardApplication getMyApplication()
+    {
+        return (CardApplication)getActivity().getApplication();
+    }
+    
     @Override
     public void onActivityCreated(Bundle savedInstanceState)
     {
