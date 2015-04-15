@@ -15,5 +15,16 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         />
+    <TextView 
+        android:id="@+id/tv_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="6dp"
+        android:textSize="@dimen/font_size_16"
+        android:textColor="@color/white"
+		android:visibility="gone"        
+        />
 
 </RelativeLayout>

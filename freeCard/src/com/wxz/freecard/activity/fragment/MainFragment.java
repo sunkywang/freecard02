@@ -11,6 +11,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -19,12 +20,15 @@ import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.util.LogUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
+import com.lidroid.xutils.view.annotation.event.OnItemClick;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.PauseOnScrollListener;
 import com.wxz.freecard.R;
 import com.wxz.freecard.CardApplication.OnLocationReceivedListener;
 import com.wxz.freecard.activity.CityActivity;
+import com.wxz.freecard.activity.MemberCardActivity;
 import com.wxz.freecard.activity.MsgCenterActivity;
+import com.wxz.freecard.activity.SellerInfoActivity;
 import com.wxz.freecard.adapter.MainFragmentListAdapter;
 import com.wxz.freecard.adapter.PicPagerAdapter;
 import com.wxz.freecard.bean.SellerInfo;
@@ -116,7 +120,15 @@ public class MainFragment extends BaseFragment
                 break;
         }
     }
-    
+    @OnItemClick(R.id.list)
+    private void onItemClick(AdapterView<?> parent, View view, int position, long id) 
+    {
+        int headerCount = list.getHeaderViewsCount();
+        Intent intent = new Intent(getActivity(), SellerInfoActivity.class);
+        SellerInfo info = (SellerInfo)listAdapter.getItem(position - headerCount);
+        intent.putExtra("sellerinfo", info);
+        startActivity(intent);
+    }
     @Override
     public void onActivityCreated(Bundle savedInstanceState)
     {

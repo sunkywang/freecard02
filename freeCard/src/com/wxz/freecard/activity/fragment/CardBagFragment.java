@@ -3,18 +3,23 @@ package com.wxz.freecard.activity.fragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
+import com.lidroid.xutils.view.annotation.event.OnItemClick;
 import com.lidroid.xutils.view.annotation.event.OnRadioGroupCheckedChange;
 import com.wxz.freecard.R;
+import com.wxz.freecard.activity.MemberCardActivity;
 import com.wxz.freecard.adapter.CardListAdapter;
 import com.wxz.freecard.adapter.CouponListAdapter;
 import com.wxz.freecard.bean.Coupon;
@@ -118,7 +123,7 @@ public class CardBagFragment extends BaseFragment
     }
     
     @OnRadioGroupCheckedChange({R.id.rg_card_bag,R.id.rg_card_sub,R.id.rg_coupon_sub})
-    public void onCheckedChanged(RadioGroup group, int checkedId)
+    private void onCheckedChanged(RadioGroup group, int checkedId)
     {
         if (group == rgMain)
         {
@@ -141,6 +146,20 @@ public class CardBagFragment extends BaseFragment
             
         }
         else if (group == rgCoupon)
+        {
+            
+        }
+    }
+    
+    @OnItemClick(R.id.list)
+    private void onItemClick(AdapterView<?> parent, View view, int position, long id) 
+    {
+        if (rgMain.getCheckedRadioButtonId() == R.id.card_tab)
+        {
+            Intent intent = new Intent(getActivity(), MemberCardActivity.class);
+            startActivity(intent);
+        }
+        else
         {
             
         }
