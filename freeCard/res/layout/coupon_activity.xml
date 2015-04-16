@@ -8,7 +8,7 @@
     <include layout="@layout/text_title"/>
     
     <ImageView
-        android:id="@+id/iv_member_card"
+        android:id="@+id/iv_coupon_pic"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:scaleType="fitXY"
@@ -30,19 +30,19 @@
                 android:layout_height="wrap_content" >
 
                 <Button
-                    android:id="@+id/bt_request_card"
+                    android:id="@+id/bt_get_coupon"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="办卡" />
+                    android:text="领券" />
 
                 <Button
-                    android:id="@+id/bt_pay_account"
+                    android:id="@+id/bt_use_coupon"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:text="结账" />
+                    android:text="使用" />
             </LinearLayout>
 
             <TextView
@@ -53,7 +53,7 @@
                 android:background="@color/light_blue"
                 android:gravity="center_vertical"
                 android:paddingLeft="6dp"
-                android:text="会员卡信息"
+                android:text="优惠券信息"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_size_16" />
 
@@ -64,38 +64,6 @@
                 android:orientation="vertical" >
 
                 <RelativeLayout
-                    android:id="@+id/layout_balance"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/item_height_short" >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="10dp"
-                        android:text="余额"
-                        android:textSize="@dimen/font_size_16" />
-
-                    <TextView
-                        android:id="@+id/tv_on_sale"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="10dp"
-                        android:text="0元"
-                        android:textSize="@dimen/font_size_16" />
-                </RelativeLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/gray" />
-
-                <RelativeLayout
-                    android:id="@+id/layout_valid_date"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/item_height_short" >
 
@@ -114,7 +82,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:layout_marginRight="10dp"
-                        android:text="2025-09-01"
+                        android:text="2025-04-08"
                         android:textSize="@dimen/font_size_16" />
                 </RelativeLayout>
 
@@ -125,27 +93,30 @@
                     android:layout_marginRight="10dp"
                     android:background="@color/gray" />
 
-                <RelativeLayout
-                    android:id="@+id/layout_available_shop"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/item_height_short" >
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
-                        android:text="适用门店"
+                        android:layout_marginTop="10dp"
+                        android:text="适用门店:"
                         android:textSize="@dimen/font_size_16" />
 
-                    <ImageView
-                        android:layout_width="20dp"
+                    <TextView
+                        android:id="@+id/tv_fit_shops"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="12dp"
-                        android:src="@drawable/right_arrow" />
-                </RelativeLayout>
+                        android:minHeight="100dp"
+                        android:background="@color/gray"
+                        android:padding="6dp"
+                        android:layout_margin="10dp"
+                        android:text="新街口店、浦口店、江宁店"
+                        android:textSize="@dimen/font_size_16" />
+                </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
@@ -154,93 +125,31 @@
                     android:layout_marginRight="10dp"
                     android:background="@color/gray" />
 
-                <RelativeLayout
-                    android:id="@+id/layout_cost_record"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/item_height_short" >
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
-                        android:text="消费记录"
+                        android:layout_marginTop="10dp"
+                        android:text="优惠券说明:"
                         android:textSize="@dimen/font_size_16" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="12dp"
-                        android:src="@drawable/right_arrow" />
-                </RelativeLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/gray" />
-
-                <RelativeLayout
-                    android:id="@+id/layout_points_record"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/item_height_short" >
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/tv_coupon_notes"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="10dp"
-                        android:text="积分记录"
+                        android:minHeight="100dp"
+                        android:background="@color/gray"
+                        android:padding="6dp"
+                        android:layout_margin="10dp"
+                        android:text="全天适用，周末节假日提前预约"
                         android:textSize="@dimen/font_size_16" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="12dp"
-                        android:src="@drawable/right_arrow" />
-                </RelativeLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/gray" />
-
-                <RelativeLayout
-                    android:id="@+id/layout_card_notes"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/item_height_short" >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="10dp"
-                        android:text="会员卡说明"
-                        android:textSize="@dimen/font_size_16" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="12dp"
-                        android:src="@drawable/right_arrow" />
-                </RelativeLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/gray" />
-
+                </LinearLayout>
+                
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" >

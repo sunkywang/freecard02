@@ -2,6 +2,7 @@ package com.wxz.freecard.activity.fragment;
 
 import com.lidroid.xutils.util.LogUtils;
 import com.wxz.freecard.CardApplication;
+import com.wxz.freecard.activity.BaseActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -17,6 +18,22 @@ public class BaseFragment extends Fragment
     public CardApplication getMyApplication()
     {
         return (CardApplication)getActivity().getApplication();
+    }
+    
+    public void showProgress()
+    {
+        if (getActivity() instanceof BaseActivity)
+        {
+            ((BaseActivity)getActivity()).showProgress();
+        }
+    }
+    
+    public void hideProgress()
+    {
+        if (getActivity() instanceof BaseActivity)
+        {
+            ((BaseActivity)getActivity()).hideProgress();
+        }
     }
     
     @Override

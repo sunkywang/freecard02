@@ -1,9 +1,11 @@
 package com.wxz.freecard.bean;
 
+import java.io.Serializable;
+
 import com.wxz.freecard.manager.SharedPreferenceManager;
 import com.wxz.freecard.manager.SharedPreferenceManager.SP_Const;
 
-public class LocationInfo
+public class LocationInfo implements Serializable
 {
     public double lat;
     
@@ -30,6 +32,46 @@ public class LocationInfo
         lng = spManager.getFloat(SP_Const.LNG, -1);
         city = spManager.getString(SP_Const.CITY,"南京");
         city = spManager.getString(SP_Const.SETCITY,"");
+    }
+
+    public double getLat()
+    {
+        return lat;
+    }
+
+    public void setLat(double lat)
+    {
+        this.lat = lat;
+    }
+
+    public double getLng()
+    {
+        return lng;
+    }
+
+    public void setLng(double lng)
+    {
+        this.lng = lng;
+    }
+
+    public String getCity()
+    {
+        return city;
+    }
+
+    public void setCity(String city)
+    {
+        this.city = city;
+    }
+
+    public String getSetCity()
+    {
+        return setCity;
+    }
+
+    public void setSetCity(String setCity)
+    {
+        this.setCity = setCity;
     }
     
 }

@@ -19,6 +19,7 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnItemClick;
 import com.lidroid.xutils.view.annotation.event.OnRadioGroupCheckedChange;
 import com.wxz.freecard.R;
+import com.wxz.freecard.activity.CouponActivity;
 import com.wxz.freecard.activity.MemberCardActivity;
 import com.wxz.freecard.adapter.CardListAdapter;
 import com.wxz.freecard.adapter.CouponListAdapter;
@@ -161,7 +162,8 @@ public class CardBagFragment extends BaseFragment
         }
         else
         {
-            
+            Intent intent = new Intent(getActivity(), CouponActivity.class);
+            startActivity(intent);
         }
     }
 }

@@ -1,6 +1,8 @@
 package com.wxz.freecard.bean;
 
-public class City {
+import java.io.Serializable;
+
+public class City implements Serializable{
 
     public String name;
     public String pinyi;

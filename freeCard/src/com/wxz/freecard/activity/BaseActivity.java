@@ -1,18 +1,54 @@
 package com.wxz.freecard.activity;
 
 import android.content.Intent;
+import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.WindowManager;
+import android.view.ViewGroup.LayoutParams;
 
 import com.lidroid.xutils.util.LogUtils;
 import com.wxz.freecard.CardApplication;
+import com.wxz.freecard.R;
 
 public class BaseActivity extends FragmentActivity
 {
+    View progressbar;
 
     public CardApplication getMyApplication()
     {
         return (CardApplication)getApplication();
+    }
+    
+    public void showProgress()
+    {
+        if (progressbar != null && progressbar.getParent()!=null)
+        {
+            return;
+        }
+        WindowManager wm = (WindowManager)getSystemService(WINDOW_SERVICE);
+        if (progressbar == null)
+        {
+            progressbar = LayoutInflater.from(this).inflate(R.layout.custom_progressbar,null);
+        }
+        WindowManager.LayoutParams params = new WindowManager.LayoutParams(
+            LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT,
+            WindowManager.LayoutParams.TYPE_APPLICATION,
+            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
+                    | WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+            PixelFormat.TRANSLUCENT);
+        wm.addView(progressbar, params);
+    }
+    
+    public void hideProgress()
+    {
+        WindowManager wm = (WindowManager)getSystemService(WINDOW_SERVICE);
+        if (progressbar != null && progressbar.getParent() != null)
+        {
+            wm.removeView(progressbar);
+        }
     }
     
     @Override
@@ -62,6 +98,7 @@ public class BaseActivity extends FragmentActivity
     {
         LogUtils.i("onDestroy");
         super.onDestroy();
+        hideProgress();
     }
 
     @Override

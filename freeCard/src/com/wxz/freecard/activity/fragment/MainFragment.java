@@ -69,6 +69,17 @@ public class MainFragment extends BaseFragment
         ViewUtils.inject(this, view);
         headerView = inflater.inflate(R.layout.ads_view_pager, list,false);
         ViewUtils.inject(this, headerView);
+        showProgress();
+        new Handler().postDelayed(new Runnable()
+        {
+            
+            @Override
+            public void run()
+            {
+                // TODO Auto-generated method stub
+                hideProgress();
+            }
+        }, 2000);
         return view;
     }
     private void initLocationOptions()

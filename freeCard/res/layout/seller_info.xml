@@ -4,11 +4,14 @@
     android:layout_height="match_parent" 
     android:background="@color/light_gray">
 
-    <include layout="@layout/text_title"/>
+    <include
+        android:id="@+id/title_include"
+         layout="@layout/text_title"/>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/title_include"
         android:layout_above="@+id/bottom_layout"
         android:scrollbars="none" >
 
@@ -46,7 +49,7 @@
                 android:id="@+id/iv_member_card"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:scaleType="matrix"
+                android:scaleType="fitCenter"
                 android:src="@drawable/bg" />
 
             <View

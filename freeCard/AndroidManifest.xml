@@ -69,11 +69,19 @@
             android:theme="@android:style/Theme.Holo.NoActionBar"
             android:screenOrientation="portrait" />
         <activity
+            android:name="com.wxz.freecard.activity.CouponActivity"
+            android:theme="@android:style/Theme.Holo.NoActionBar"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.wxz.freecard.activity.SellerInfoActivity"
             android:theme="@android:style/Theme.Holo.NoActionBar"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.wxz.freecard.activity.SettingsActivity"
+            android:theme="@android:style/Theme.Holo.NoActionBar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wxz.freecard.activity.BusinessOnSaleListActivity"
             android:theme="@android:style/Theme.Holo.NoActionBar"
             android:screenOrientation="portrait" />
             

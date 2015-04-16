@@ -1,10 +1,12 @@
 package com.wxz.freecard.bean;
 
+import java.io.Serializable;
+
 /**
  * 用户信息：可用户注册、登录、信息维护等
  * Created by Renzo on 2015-03-25.
  */
-public class UserInfo {
+public class UserInfo implements Serializable{
     private String userNumber;      // 用户编号
     private String userName;        // 姓名
     private String loginPassword;  // 登录密码
