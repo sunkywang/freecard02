@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lint>
+    <issue id="ContentDescription">
+        <ignore path="res/layout/discovery_fragment.xml" />
+    </issue>
+    <issue id="DisableBaselineAlignment">
+        <ignore path="res/layout/discovery_fragment.xml" />
+    </issue>
+    <issue id="HardcodedText">
+        <ignore path="res/layout/discovery_fragment.xml" />
+    </issue>
     <issue id="RtlHardcoded">
+        <ignore path="res/layout/discovery_fragment.xml" />
         <ignore path="res/layout/seller_info.xml" />
     </issue>
 </lint>

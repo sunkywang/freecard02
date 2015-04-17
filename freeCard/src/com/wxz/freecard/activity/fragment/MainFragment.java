@@ -25,10 +25,12 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.PauseOnScrollListener;
 import com.wxz.freecard.R;
 import com.wxz.freecard.CardApplication.OnLocationReceivedListener;
+import com.wxz.freecard.activity.BusinessOnSaleListActivity;
 import com.wxz.freecard.activity.CityActivity;
 import com.wxz.freecard.activity.MemberCardActivity;
 import com.wxz.freecard.activity.MsgCenterActivity;
 import com.wxz.freecard.activity.SellerInfoActivity;
+import com.wxz.freecard.adapter.BusinessSaleListAdapter;
 import com.wxz.freecard.adapter.MainFragmentListAdapter;
 import com.wxz.freecard.adapter.PicPagerAdapter;
 import com.wxz.freecard.bean.SellerInfo;
@@ -39,49 +41,60 @@ public class MainFragment extends BaseFragment
 {
     @ViewInject(R.id.tv_city)
     private TextView tvLocation;
+    
     @ViewInject(R.id.search_input)
     private TextView tvSearch;
+    
     @ViewInject(R.id.tv_msg)
     private TextView tvMsg;
+    
     @ViewInject(R.id.tv_msg_count)
     private TextView tvMsgCount;
+    
     @ViewInject(R.id.list)
     private ListView list;
+    
     @ViewInject(R.id.vp_ads)
     private ViewPager adsPager;
+    
     @ViewInject(R.id.indicator)
     private CirclePageIndicator indicator;
     
     private View headerView;
+    
+    private View footerView;
     
     private PicPagerAdapter pagerAdapter;
     
     private MainFragmentListAdapter listAdapter;
     
     private AdsPlayer adsPlayer;
-
+    
     private LocationClient mLocationClient;
+    
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.main_fragment, container, false);
         ViewUtils.inject(this, view);
-        headerView = inflater.inflate(R.layout.ads_view_pager, list,false);
+        headerView = inflater.inflate(R.layout.ads_view_pager, list, false);
         ViewUtils.inject(this, headerView);
-        showProgress();
-        new Handler().postDelayed(new Runnable()
-        {
-            
-            @Override
-            public void run()
-            {
-                // TODO Auto-generated method stub
-                hideProgress();
-            }
-        }, 2000);
+        footerView = inflater.inflate(R.layout.view_more, list, false);
+        //        showProgress();
+        //        new Handler().postDelayed(new Runnable()
+        //        {
+        //            
+        //            @Override
+        //            public void run()
+        //            {
+        //                // TODO Auto-generated method stub
+        //                hideProgress();
+        //            }
+        //        }, 2000);
         return view;
     }
+    
     private void initLocationOptions()
     {
         mLocationClient = getMyApplication().mLocationClient;
@@ -101,7 +114,7 @@ public class MainFragment extends BaseFragment
                 @Override
                 public void run()
                 {
-                    LogUtils.e("city:"+getMyApplication().getLocationInfo().city);
+                    LogUtils.e("city:" + getMyApplication().getLocationInfo().city);
                     if (getMyApplication().getLocationInfo().setCity.equals(""))
                         tvLocation.setText(getMyApplication().getLocationInfo().city);
                 }
@@ -109,16 +122,16 @@ public class MainFragment extends BaseFragment
         }
     };
     
-    @OnClick({R.id.tv_city,R.id.search_input,R.id.tv_msg_count,R.id.tv_msg})
+    @OnClick({R.id.tv_city, R.id.search_input, R.id.tv_msg_count, R.id.tv_msg})
     public void onClick(View v)
     {
         Intent intent;
-        switch(v.getId())
+        switch (v.getId())
         {
             case R.id.tv_city:
                 LogUtils.i("city_click");
                 intent = new Intent(getActivity(), CityActivity.class);
-                startActivityForResult(intent,0);
+                startActivityForResult(intent, 0);
                 break;
             case R.id.search_input:
                 LogUtils.i("search_click");
@@ -127,19 +140,35 @@ public class MainFragment extends BaseFragment
             case R.id.tv_msg:
                 LogUtils.i("msg_click");
                 intent = new Intent(getActivity(), MsgCenterActivity.class);
-                startActivityForResult(intent,1);
+                startActivityForResult(intent, 1);
+                break;
+            case R.id.tv_view_more:
+                intent = new Intent(getActivity(), BusinessOnSaleListActivity.class);
+                startActivity(intent);
                 break;
         }
     }
+    
     @OnItemClick(R.id.list)
-    private void onItemClick(AdapterView<?> parent, View view, int position, long id) 
+    private void onItemClick(AdapterView<?> parent, View view, int position, long id)
     {
         int headerCount = list.getHeaderViewsCount();
-        Intent intent = new Intent(getActivity(), SellerInfoActivity.class);
-        SellerInfo info = (SellerInfo)listAdapter.getItem(position - headerCount);
-        intent.putExtra("sellerinfo", info);
-        startActivity(intent);
+        int footerCount = list.getFooterViewsCount();
+        int itemCount = listAdapter.getCount();
+        if (position != (headerCount + footerCount + itemCount - 1))
+        {
+            Intent intent = new Intent(getActivity(), SellerInfoActivity.class);
+            SellerInfo info = (SellerInfo)listAdapter.getItem(position - headerCount);
+            intent.putExtra("sellerinfo", info);
+            startActivity(intent);
+        }
+        else
+        {
+            Intent intent = new Intent(getActivity(), BusinessOnSaleListActivity.class);
+            startActivity(intent);
+        }
     }
+    
     @Override
     public void onActivityCreated(Bundle savedInstanceState)
     {
@@ -209,8 +238,9 @@ public class MainFragment extends BaseFragment
         
         pagerAdapter = new PicPagerAdapter(getSellerInfos());
         adsPager.setAdapter(pagerAdapter);
-    	indicator.setViewPager(adsPager);
+        indicator.setViewPager(adsPager);
         list.addHeaderView(headerView);
+        list.addFooterView(footerView);
         listAdapter = new MainFragmentListAdapter(getActivity(), getSellerInfos());
         list.setAdapter(listAdapter);
         list.setOnScrollListener(new PauseOnScrollListener(ImageLoader.getInstance(), true, true));
@@ -218,23 +248,23 @@ public class MainFragment extends BaseFragment
     
     private List<SellerInfo> getSellerInfos()
     {
-    	List<SellerInfo> list = new ArrayList<SellerInfo>();
-    	SellerInfo info1 = new SellerInfo();
-    	info1.name = "商家1";
-    	info1.detail = "办卡全面8折，赶快行动！";
-    	info1.pic_url = "http://img0.imgtn.bdimg.com/it/u=568515214,1152612734&fm=116&gp=0.jpg";
-    	list.add(info1);
-    	SellerInfo info2 = new SellerInfo();
-    	info2.name = "商家3";
-    	info2.detail = "来就送你钱，统统不要钱，就是这么任性！";
-    	info2.pic_url = "http://img2.imgtn.bdimg.com/it/u=3452729668,1362003854&fm=116&gp=0.jpg";
-    	list.add(info2);
-    	SellerInfo info3 = new SellerInfo();
-    	info3.name = "商家4";
-    	info3.detail = "办卡全面8折，赶快行动！";
-    	info3.pic_url = "http://img0.imgtn.bdimg.com/it/u=4266094203,516749329&fm=116&gp=0.jpg";
-    	list.add(info3);
-    	return list;
+        List<SellerInfo> list = new ArrayList<SellerInfo>();
+        SellerInfo info1 = new SellerInfo();
+        info1.name = "商家1";
+        info1.detail = "办卡全面8折，赶快行动！";
+        info1.pic_url = "http://img0.imgtn.bdimg.com/it/u=568515214,1152612734&fm=116&gp=0.jpg";
+        list.add(info1);
+        SellerInfo info2 = new SellerInfo();
+        info2.name = "商家3";
+        info2.detail = "来就送你钱，统统不要钱，就是这么任性！";
+        info2.pic_url = "http://img2.imgtn.bdimg.com/it/u=3452729668,1362003854&fm=116&gp=0.jpg";
+        list.add(info2);
+        SellerInfo info3 = new SellerInfo();
+        info3.name = "商家4";
+        info3.detail = "办卡全面8折，赶快行动！";
+        info3.pic_url = "http://img0.imgtn.bdimg.com/it/u=4266094203,516749329&fm=116&gp=0.jpg";
+        list.add(info3);
+        return list;
     }
     
 }
