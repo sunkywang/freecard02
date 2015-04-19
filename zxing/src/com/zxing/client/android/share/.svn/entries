@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://webapp.hoperun.com:19000/svn/qmjs"
+   name=""
+   revision="5934"
+   last-author="shen_feng"
+   url="https://webapp.hoperun.com:19000/svn/qmjs/QMJS_SRC/android/zxing/src/com/hoperun/building/zxing/client/android/share"
+   uuid="015fb934-d3ae-9c4a-a5a8-10234ecf524b"
+   committed-rev="1527"
+   kind="dir"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="AppInfo.java"
+   checksum="c9472f9c40f9d1aedab4af7a0c52df2e"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="AppPickerActivity.java"
+   checksum="2bfa535ecc6e26a80591be0cfb9e0329"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="BookmarkAdapter.java"
+   checksum="b2fdec170406616670cb98deac1adb36"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="BookmarkPickerActivity.java"
+   checksum="27c161b487ff79045541b4712814a517"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="LoadPackagesAsyncTask.java"
+   checksum="8675c9eb52f5eb96c360620b3a22babd"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="ShareActivity.java"
+   checksum="6de84fdc8f5137ed3458336ddc53bcd2"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+</wc-entries>

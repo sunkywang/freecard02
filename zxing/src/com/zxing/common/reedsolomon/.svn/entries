@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://webapp.hoperun.com:19000/svn/qmjs"
+   name=""
+   revision="5934"
+   last-author="zhao_lei"
+   url="https://webapp.hoperun.com:19000/svn/qmjs/QMJS_SRC/android/zxing/src/com/hoperun/building/zxing/common/reedsolomon"
+   uuid="015fb934-d3ae-9c4a-a5a8-10234ecf524b"
+   committed-rev="15"
+   kind="dir"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="GenericGF.java"
+   checksum="3ef703da955db26bbf4dbaa8ca8f5b89"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="GenericGFPoly.java"
+   checksum="4f8d1850acd7c9d337a837873c1cf3f1"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="ReedSolomonDecoder.java"
+   checksum="ca067cceb640f12447b8ecbe82189a80"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="ReedSolomonEncoder.java"
+   checksum="f0a20351d060236b7891616a662ef074"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="ReedSolomonException.java"
+   checksum="b4df51f8cb5d605e267b7e1a106c6539"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+</wc-entries>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://webapp.hoperun.com:19000/svn/qmjs"
+   name=""
+   revision="5934"
+   last-author="zhao_lei"
+   url="https://webapp.hoperun.com:19000/svn/qmjs/QMJS_SRC/android/zxing/src/com/hoperun/building/zxing/oned/rss/expanded/decoders"
+   uuid="015fb934-d3ae-9c4a-a5a8-10234ecf524b"
+   committed-rev="15"
+   kind="dir"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="AI013103decoder.java"
+   checksum="525d033e32239f8e4e51e359960ec2a2"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="AI01320xDecoder.java"
+   checksum="8d778bbcd627991e84fe6d3fc7551fb6"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="AI01392xDecoder.java"
+   checksum="454999a516450eecf582c46e9e4e4487"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="AI01393xDecoder.java"
+   checksum="9924c45ba1f78b6cb03af67b07c8a3e3"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="AI013x0x1xDecoder.java"
+   checksum="022d37869213282fabe916fbe4c4404d"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="AI013x0xDecoder.java"
+   checksum="d6cb275e543a54da116872f32ea5d88f"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="AI01AndOtherAIs.java"
+   checksum="44d7c22b371093b09778848c6d07d13f"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="AI01decoder.java"
+   checksum="52b5919d58a12dd1493594107550c0f4"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="AI01weightDecoder.java"
+   checksum="bb1c81a0a8edb657c5b3a920ae04e2e2"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="AbstractExpandedDecoder.java"
+   checksum="421be210959759b1e078531d863aa69d"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="AnyAIDecoder.java"
+   checksum="0caf2698d4c7a36a2fb2aaf3a4a0e229"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="BlockParsedResult.java"
+   checksum="1e9fc217c342d9a550e676bfe49b4080"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="CurrentParsingState.java"
+   checksum="2edb65361a38deb602dc762f13349b42"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="DecodedChar.java"
+   checksum="bd7ed5ea475339b15dd8dce701a775de"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="DecodedInformation.java"
+   checksum="0c4274930ccd3400eaf4d54388453635"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="DecodedNumeric.java"
+   checksum="d12cd2293cfd056f3cfbeb7232995b3d"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="DecodedObject.java"
+   checksum="6d7da7a56b0c1b4f3c1ee7787b3707a2"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="FieldParser.java"
+   checksum="91fd4b19aceea5b0ca383396139bd683"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="GeneralAppIdDecoder.java"
+   checksum="9232b9eb9ed01ddf4f3a6f01f62311da"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+</wc-entries>

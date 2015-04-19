@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://webapp.hoperun.com:19000/svn/qmjs"
+   name=""
+   revision="5934"
+   last-author="zhao_lei"
+   url="https://webapp.hoperun.com:19000/svn/qmjs/QMJS_SRC/android/zxing/src/com/hoperun/building/zxing/qrcode"
+   uuid="015fb934-d3ae-9c4a-a5a8-10234ecf524b"
+   committed-rev="15"
+   kind="dir"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="QRCodeReader.java"
+   checksum="74f20a5339701377ce62085c1f3a110f"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="QRCodeWriter.java"
+   checksum="e6c40d460eda236709cdbaaab6d4e7b4"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="decoder"
+   kind="dir"/>
+<entry
+   name="detector"
+   kind="dir"/>
+<entry
+   name="encoder"
+   kind="dir"/>
+</wc-entries>

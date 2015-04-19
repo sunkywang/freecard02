@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="vertical"
+    android:background="@drawable/bar_bg" >
+    
+    
+    <LinearLayout 
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:gravity="center_vertical"
+        >
+    
+    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/f_back"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="14dp"
+        />
+    
+    <ImageView 
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/back"
+        />
+    
+    </LinearLayout>
+    
+    <TextView 
+        android:id="@+id/top_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/back"
+        android:text="场馆寻宝"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_marginLeft="5dp"
+        android:layout_centerVertical="true"
+        />
+    
+
+</RelativeLayout>

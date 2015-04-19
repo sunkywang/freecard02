@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://webapp.hoperun.com:19000/svn/qmjs"
+   name=""
+   revision="5934"
+   last-author="zhao_lei"
+   url="https://webapp.hoperun.com:19000/svn/qmjs/QMJS_SRC/android/zxing/src/com/hoperun/building/zxing/multi"
+   uuid="015fb934-d3ae-9c4a-a5a8-10234ecf524b"
+   committed-rev="15"
+   kind="dir"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="ByQuadrantReader.java"
+   checksum="3ee8a7f018ab3bfe9776060b3dfed41e"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="GenericMultipleBarcodeReader.java"
+   checksum="ad8c2e8ba200e1da82a8d41c2ce1270e"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="MultipleBarcodeReader.java"
+   checksum="126a55e33904c9a6a463adafbd15801a"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="qrcode"
+   kind="dir"/>
+</wc-entries>

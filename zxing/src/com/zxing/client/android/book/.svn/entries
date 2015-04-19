@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://webapp.hoperun.com:19000/svn/qmjs"
+   name=""
+   revision="5934"
+   last-author="shen_feng"
+   url="https://webapp.hoperun.com:19000/svn/qmjs/QMJS_SRC/android/zxing/src/com/hoperun/building/zxing/client/android/book"
+   uuid="015fb934-d3ae-9c4a-a5a8-10234ecf524b"
+   committed-rev="1527"
+   kind="dir"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="BrowseBookListener.java"
+   checksum="797594e5f37be081766e1633b4d13839"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="SearchBookContentsActivity.java"
+   checksum="672f6524160cfd8d3d75eeef0df2042f"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="SearchBookContentsAdapter.java"
+   checksum="254e2985c809aedd264c2f2204d91d10"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="SearchBookContentsListItem.java"
+   checksum="649ad5705b41a10fa049ca65096dbd6f"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="SearchBookContentsResult.java"
+   checksum="9b43d1c9f0ccc386fc5ab98c4c25f654"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+</wc-entries>

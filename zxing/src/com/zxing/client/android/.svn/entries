@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://webapp.hoperun.com:19000/svn/qmjs"
+   name=""
+   revision="5934"
+   last-author="zhu_caiming"
+   url="https://webapp.hoperun.com:19000/svn/qmjs/QMJS_SRC/android/zxing/src/com/hoperun/building/zxing/client/android"
+   uuid="015fb934-d3ae-9c4a-a5a8-10234ecf524b"
+   committed-rev="2254"
+   kind="dir"
+   committed-date="2014-07-10T12:11:13.300800Z"/>
+<entry
+   name="AmbientLightManager.java"
+   checksum="72df07f6a8f0d2a8ed772ee56a417eb4"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="BeepManager.java"
+   checksum="a2f9eb1c703031d65a565e8af8429c8e"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="CaptureActivity.java"
+   checksum="38329d8a14e8b7f905a845923bdb5d05"
+   last-author="zhu_caiming"
+   committed-rev="2254"
+   text-time="2014-07-10T12:11:13.300000Z"
+   kind="file"
+   committed-date="2014-07-10T12:11:13.300800Z"/>
+<entry
+   name="CaptureActivityHandler.java"
+   checksum="f7aa1698808f303fd7391a57fa1bec27"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="Contents.java"
+   checksum="ed7d2018af8764bc3900a40c98a895f2"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="DecodeFormatManager.java"
+   checksum="aa0c4420e5801313dfe8cf91b0ecea10"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="DecodeHandler.java"
+   checksum="f40a7318c177d5a5b0aac7f52eeee13c"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="DecodeHintManager.java"
+   checksum="5b7166367310f07ed3f376a004e26ad1"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="DecodeThread.java"
+   checksum="a6a3ea27323ffd10adb660b58482463b"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="FinishListener.java"
+   checksum="59cea740cb6c4a2e21ce0fad07f96220"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="HelpActivity.java"
+   checksum="d556ddbb35d017d489845b93cbbbb76f"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="HttpHelper.java"
+   checksum="3ab6f5a1a638acc97accffc3eadb3cbb"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="InactivityTimer.java"
+   checksum="0b8c103c22b9ca2c7ee91d4f6736e486"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="IntentSource.java"
+   checksum="87e167a5c833d61caed004157bd72661"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="Intents.java"
+   checksum="b558c5f19cf600114b1b6091364640ba"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="LocaleManager.java"
+   checksum="59ae397baab0da40b854040b038aa7cb"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="PreferencesActivity.java"
+   checksum="6a3e028a91f4fdecb12b04b13602d890"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="PreferencesFragment.java"
+   checksum="6fcd1a2d11199cad605a95c4655d524e"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="ScanFromWebPageManager.java"
+   checksum="a618dde04c9716486b6d1b8a30005d17"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="ViewfinderResultPointCallback.java"
+   checksum="1459c6a78d4ed894e524abacc8b2c7e4"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="ViewfinderView.java"
+   checksum="dfb66eabddae68a76cdadfa535e814e8"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="book"
+   kind="dir"/>
+<entry
+   name="camera"
+   kind="dir"/>
+<entry
+   name="clipboard"
+   kind="dir"/>
+<entry
+   name="encode"
+   kind="dir"/>
+<entry
+   name="history"
+   kind="dir"/>
+<entry
+   name="result"
+   kind="dir"/>
+<entry
+   name="share"
+   kind="dir"/>
+<entry
+   name="wifi"
+   kind="dir"/>
+</wc-entries>

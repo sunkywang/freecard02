@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://webapp.hoperun.com:19000/svn/qmjs"
+   name=""
+   revision="5934"
+   last-author="shen_feng"
+   url="https://webapp.hoperun.com:19000/svn/qmjs/QMJS_SRC/android/zxing/src/com/hoperun/building/zxing/client/android/result"
+   uuid="015fb934-d3ae-9c4a-a5a8-10234ecf524b"
+   committed-rev="1527"
+   kind="dir"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="AddressBookResultHandler.java"
+   checksum="1ecbedf3c558e8d8840499a0aaf4e774"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="CalendarResultHandler.java"
+   checksum="4e44398923e5d251e08df72699304960"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="EmailAddressResultHandler.java"
+   checksum="3ddb548ca813ddfefba3e2e4ed4f88d7"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="GeoResultHandler.java"
+   checksum="55f9531f5c16c38631f874bbcd89f376"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="ISBNResultHandler.java"
+   checksum="f5eabcec4ed92b8edf2ed835e8b26ea5"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="ProductResultHandler.java"
+   checksum="15571066145d443e0838433a389d473a"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="ResultButtonListener.java"
+   checksum="4bd25da49a1565c8544250d577501f6d"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="ResultHandler.java"
+   checksum="48b007442d6bee6f2d7fcd1f1f19ea0c"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="ResultHandlerFactory.java"
+   checksum="b7de125d3a3561cf4f560643a87c6365"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="SMSResultHandler.java"
+   checksum="f2fc69a6d9135f920b19a3ac8d8445bb"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="TelResultHandler.java"
+   checksum="316fc34ff4706f9f2757f4d6e3734c26"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="TextResultHandler.java"
+   checksum="1794a6750cd8964180546a69a6ebe442"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="URIResultHandler.java"
+   checksum="ef829a35f5a486d8d4a6d2c822499a61"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="WifiResultHandler.java"
+   checksum="a012efd4a3ee97eb1341affb078d540c"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="supplement"
+   kind="dir"/>
+</wc-entries>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_top"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+   >
+
+    <Button
+        android:text="返回"
+        android:id="@+id/capture_but_left"
+        style="@style/top_left_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_left_btn_selector" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1dip"
+        android:layout_toRightOf="@+id/capture_but_left"
+        android:background="@drawable/top_bar" >
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/capture_txt_title"
+        style="@style/top_left_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/top_bar"
+        android:gravity="center" />
+
+    <Button
+        android:id="@+id/right_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/top_right_btn_selector" />
+
+</RelativeLayout>

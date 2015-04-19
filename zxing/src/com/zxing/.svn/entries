@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://webapp.hoperun.com:19000/svn/qmjs"
+   name=""
+   revision="5934"
+   last-author="zhu_caiming"
+   url="https://webapp.hoperun.com:19000/svn/qmjs/QMJS_SRC/android/zxing/src/com/hoperun/building/zxing"
+   uuid="015fb934-d3ae-9c4a-a5a8-10234ecf524b"
+   committed-rev="2254"
+   kind="dir"
+   committed-date="2014-07-10T12:11:13.300800Z"/>
+<entry
+   name="BarcodeFormat.java"
+   checksum="0fca09f9f0d7c5ade5c126e2547178ed"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="Binarizer.java"
+   checksum="41119e93a90a98086007ff065ca535e7"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="BinaryBitmap.java"
+   checksum="ecaa296d17a58c5e610ca68ec4af7526"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="ChecksumException.java"
+   checksum="484533522c6620110f19d5e0fcec3f5a"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="DecodeHintType.java"
+   checksum="e4f885eff764f6dd1af4eb801398ff27"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="Dimension.java"
+   checksum="5d5efce3fe86659ef217ae4cf7a6fb42"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="EncodeHintType.java"
+   checksum="72dea2a7ac56cf8acd14a5c674aa0a3e"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="FormatException.java"
+   checksum="85de58ebb90e3b9182ca82cc35d2079a"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="InvertedLuminanceSource.java"
+   checksum="fac7e84ad118f230ebe14db9dcfc7d70"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="LuminanceSource.java"
+   checksum="5cd716178cc273a5232ac3f51733551c"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="MultiFormatReader.java"
+   checksum="66ca8cf839de4802cb62dbee23e20c52"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="MultiFormatWriter.java"
+   checksum="b09cf42f92abb824c5554637d45b7710"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="NotFoundException.java"
+   checksum="eb29021d7f5f4c9d41a4408458e1ac28"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="PlanarYUVLuminanceSource.java"
+   checksum="0756b7e5d23b13dfd11aa3e66a0c23a8"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="RGBLuminanceSource.java"
+   checksum="1a65ddf7ec7f20b52d389cc220bd96ab"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="Reader.java"
+   checksum="b5c642a2d3972ed459183af8e0dc2a78"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="ReaderException.java"
+   checksum="9bec740885b7a6691dda400eb6ea895b"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="Result.java"
+   checksum="faa195d94a1054a9cd95a6524ecbfe85"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="ResultMetadataType.java"
+   checksum="4780d5aca2310567cd2b9397c49d6cb0"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="ResultPoint.java"
+   checksum="ae6ae8622d6dceb5460e39e19c480d8d"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="ResultPointCallback.java"
+   checksum="44489155dbc39f4d05b10459d16ecb3b"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="Writer.java"
+   checksum="968623ebd2914feacf6aa68f9bae9d76"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="WriterException.java"
+   checksum="460153e7865e2cc94c8348fc8946e695"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="aztec"
+   kind="dir"/>
+<entry
+   name="client"
+   kind="dir"/>
+<entry
+   name="common"
+   kind="dir"/>
+<entry
+   name="datamatrix"
+   kind="dir"/>
+<entry
+   name="maxicode"
+   kind="dir"/>
+<entry
+   name="multi"
+   kind="dir"/>
+<entry
+   name="oned"
+   kind="dir"/>
+<entry
+   name="pdf417"
+   kind="dir"/>
+<entry
+   name="qrcode"
+   kind="dir"/>
+</wc-entries>

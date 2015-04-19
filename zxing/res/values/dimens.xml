@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <dimen name="standard_padding">8dip</dimen>
+  <dimen name="half_padding">4dip</dimen>
+  <dimen name="viewfinder_descrption_textsize">14sp</dimen>
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://webapp.hoperun.com:19000/svn/qmjs"
+   name=""
+   revision="5934"
+   last-author="shen_feng"
+   url="https://webapp.hoperun.com:19000/svn/qmjs/QMJS_SRC/android/zxing/src/com/hoperun/building/zxing/client/android/history"
+   uuid="015fb934-d3ae-9c4a-a5a8-10234ecf524b"
+   committed-rev="1527"
+   kind="dir"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="DBHelper.java"
+   checksum="ccbb5f8a7173946023f6beaa964dfa85"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="HistoryActivity.java"
+   checksum="a3d7fea663f09613f83a57008ac93362"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="HistoryItem.java"
+   checksum="2f376f2e2b2e3bab65cc2c0ff36dc555"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+<entry
+   name="HistoryItemAdapter.java"
+   checksum="8df41def4fca6c833a8398f354bdf6e4"
+   last-author="shen_feng"
+   committed-rev="1527"
+   text-time="2014-07-04T06:17:46.989000Z"
+   kind="file"
+   committed-date="2014-07-04T06:17:46.989200Z"/>
+<entry
+   name="HistoryManager.java"
+   checksum="11ceaa03cbcd5e8d0e52664c8b920ce9"
+   last-author="zhao_lei"
+   committed-rev="15"
+   text-time="2014-06-17T01:48:15.908000Z"
+   kind="file"
+   committed-date="2014-06-17T01:48:15.908162Z"/>
+</wc-entries>

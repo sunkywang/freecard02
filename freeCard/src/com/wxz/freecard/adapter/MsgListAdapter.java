@@ -11,11 +11,9 @@ import android.widget.TextView;
 
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.wxz.freecard.R;
 import com.wxz.freecard.bean.MessageInfo;
-import com.wxz.freecard.bean.SellerInfo;
 
 /**
  * @author Administrator

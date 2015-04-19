@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://webapp.hoperun.com:19000/svn/qmjs"
+   name=""
+   revision="5934"
+   last-author="zhu_caiming"
+   url="https://webapp.hoperun.com:19000/svn/qmjs/QMJS_SRC/android/zxing/src/com/hoperun/building/zxing/client"
+   uuid="015fb934-d3ae-9c4a-a5a8-10234ecf524b"
+   committed-rev="2254"
+   kind="dir"
+   committed-date="2014-07-10T12:11:13.300800Z"/>
+<entry
+   name="android"
+   kind="dir"/>
+<entry
+   name="result"
+   kind="dir"/>
+</wc-entries>
