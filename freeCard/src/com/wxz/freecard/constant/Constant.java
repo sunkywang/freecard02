@@ -19,4 +19,6 @@ public class Constant {
     public static final int CONNECT_TIMEOUT = 15000;
     // 读取服务器返回数据时间
     public static final int READ_TIMEOUT = 10000;
+    
+    public static final String SPLASH_FILE_PATH = "/splash";
 }

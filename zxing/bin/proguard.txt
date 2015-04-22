@@ -25,7 +25,7 @@
 # view AndroidManifest.xml #generated:58
 -keep class com.zxing.client.android.CaptureActivity { <init>(...); }
 
-# view ldpi\res/layout-ldpi/capture.xml #generated:23
+# view ldpi-v4\res/layout-ldpi-v4/capture.xml #generated:23
 # view res/layout/capture.xml #generated:23
 # view res/layout/capture_new.xml #generated:27
 -keep class com.zxing.client.android.ViewfinderView { <init>(...); }

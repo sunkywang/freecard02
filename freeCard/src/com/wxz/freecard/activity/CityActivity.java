@@ -38,7 +38,7 @@ import com.lidroid.xutils.view.annotation.event.OnClick;
 import com.wxz.freecard.CardApplication.OnLocationReceivedListener;
 import com.wxz.freecard.R;
 import com.wxz.freecard.bean.City;
-import com.wxz.freecard.database.DBHelper;
+import com.wxz.freecard.database.CityDBHelper;
 import com.wxz.freecard.view.LetterListView;
 import com.wxz.freecard.view.LetterListView.OnTouchingLetterChangedListener;
 
@@ -186,7 +186,7 @@ public class CityActivity extends BaseActivity {
 	@SuppressWarnings("unchecked")
     private ArrayList<City> getCityList() {
 	    ArrayList<City> list = new ArrayList<City>();
-	    DBHelper dbHelper = new DBHelper(this,getFilesDir()+"/databases/"+DBHelper.DB_NAME);
+	    CityDBHelper dbHelper = new CityDBHelper(this,getFilesDir()+"/databases/"+CityDBHelper.DB_NAME);
 		try {
 		    dbHelper.createDataBase();
 			SQLiteDatabase db = dbHelper.getWritableDatabase();

@@ -25,11 +25,11 @@ public class DBManager
         return instance;
     }
     
-    private CacheDBHelper mHelper;
+    private MainDBHelper mHelper;
     
     private DBManager(Context context)
     {
-        mHelper = new CacheDBHelper(context);
+        mHelper = new MainDBHelper(context);
     }
     
     public List<MessageInfo> getMessageInfos()

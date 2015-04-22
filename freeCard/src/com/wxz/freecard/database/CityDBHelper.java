@@ -21,7 +21,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  *         supported.) 将把assets下的数据库文件直接复制到DB_PATH，但数据库文件大小限制在1M以下
  *         如果有超过1M的大文件，则需要先分割为N个小文件，然后使用copyBigDatabase()替换copyDatabase()
  */
-public class DBHelper extends SQLiteOpenHelper {
+public class CityDBHelper extends SQLiteOpenHelper {
     // 用户数据库文件的版本
     private static final int DB_VERSION = 3;
     private static String DB_PATH;
@@ -49,22 +49,22 @@ public class DBHelper extends SQLiteOpenHelper {
      * @param version
      *            当前数据库的版本，值必须是整数并且是递增的状态
      */
-    public DBHelper(Context context, String name, CursorFactory factory,
+    public CityDBHelper(Context context, String name, CursorFactory factory,
             int version) {
         super(context, name, null, version);
         this.myContext = context;
         DB_PATH = context.getFilesDir()+"/databases/";
     }
 
-    public DBHelper(Context context, String name, int version) {
+    public CityDBHelper(Context context, String name, int version) {
         this(context, name, null, version);
     }
 
-    public DBHelper(Context context, String name) {
+    public CityDBHelper(Context context, String name) {
         this(context, name, DB_VERSION);
     }
 
-    public DBHelper(Context context) {
+    public CityDBHelper(Context context) {
         this(context, null);
     }
 

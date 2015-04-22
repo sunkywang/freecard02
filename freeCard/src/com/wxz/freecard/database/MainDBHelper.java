@@ -12,7 +12,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class CacheDBHelper extends SQLiteOpenHelper
+public class MainDBHelper extends SQLiteOpenHelper
 {
     private static final String DB_NAME = "card.db";
     
@@ -20,7 +20,7 @@ public class CacheDBHelper extends SQLiteOpenHelper
     
     private List<IBaseTable> tables = new ArrayList<IBaseTable>();
 
-    public CacheDBHelper(Context context, String name, CursorFactory factory, int version,
+    public MainDBHelper(Context context, String name, CursorFactory factory, int version,
         DatabaseErrorHandler errorHandler)
     {
         super(context, name, factory, version, errorHandler);
@@ -28,12 +28,12 @@ public class CacheDBHelper extends SQLiteOpenHelper
         tables.add(msgtable);
     }
 
-    public CacheDBHelper(Context context, String name, CursorFactory factory, int version)
+    public MainDBHelper(Context context, String name, CursorFactory factory, int version)
     {
         super(context, name, factory, version);
     }
 
-    public CacheDBHelper(Context context)
+    public MainDBHelper(Context context)
     {
         this(context, DB_NAME, null, DB_VERSION);
     }
