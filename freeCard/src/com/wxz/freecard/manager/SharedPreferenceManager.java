@@ -23,6 +23,8 @@ public class SharedPreferenceManager
         public static final String LAT = "lat";
         
         public static final String LNG = "lng";
+        
+        public static final String ALLOW_LOCATION = "allow_location";
     }
     
     private static SharedPreferenceManager manager;

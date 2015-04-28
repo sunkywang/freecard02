@@ -42,9 +42,9 @@ public class MineFragment extends BaseFragment
         tvRightText.setVisibility(View.VISIBLE);
         try
         {
-            ivCode.setImageBitmap(QRCodeUtil.Create2DCode("http://www.baidu.com"));
+            ivCode.setImageBitmap(QRCodeUtil.Create2DCode("6950574780508"));
         }
-        catch (WriterException e)
+        catch (Exception e)
         {
             e.printStackTrace();
         }
