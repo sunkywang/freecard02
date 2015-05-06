@@ -8,5 +8,6 @@
     <color name="light_gray">#ffdddddd</color>
     <color name="dark_gray">#ff333333</color>
     <color name="light_blue">#ff2288ff</color>
+    <color name="theme_blue">#3296f0</color>
     <color name="translucent">#33000000</color>
 </resources>
